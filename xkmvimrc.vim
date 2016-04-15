@@ -15,6 +15,7 @@ filetype plugin indent on
 syntax on
 " Setting colorscheme
 colorscheme desert
+color darkblue
 " Other settings.
 set autoindent
 set autoread
@@ -44,7 +45,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 "set mouse=a
-set number
+"set number
 set pumheight=10
 set ruler
 set scrolloff=5
@@ -116,7 +117,7 @@ function AddTitle()
     call setline(1,"/**-------------------------------------------------------------------------")
     call append (1," * @file " . expand("%"))
     call append (2," *" )
-    call append (3," * @author xiekunming@cldmind.com" )
+    call append (3," * @author xiekm@yunchao.com" )
     call append (4," *" )
     call append (5," * @date " . strftime("%Y-%m-%d"))
     call append (6," *" )
