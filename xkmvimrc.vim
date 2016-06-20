@@ -92,7 +92,6 @@ nmap <silent> <leader>cd :exe 'cd ' . OpenDir<cr>:pwd<cr>
 
 function GPLV2()
     call setline(1,"/**-------------------------------------------------------------------------")
-    call append (1, " * {description}")
     call append (2, " * ")
     call append (3, " * Copyright (C) 2015 KunMing Xie <ckelsel@hotmail.com>")
     call append (4, " * ")
@@ -111,7 +110,26 @@ function GPLV2()
     call append (17, " * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.")
     call append (18, " */")
 endf
-map lce :call GPLV2()
+map gpl :call GPLV2()
+
+
+function Apache()
+    call setline(1,"/* Copyright 2016 kunming.xie")
+    call append (1, " *")
+    call append (2, " * Licensed under the Apache License, Version 2.0 (the \"License\");")
+    call append (3, " * you may not use this file except in compliance with the License.")
+    call append (4, " * You may obtain a copy of the License at")
+    call append (5, " *")
+    call append (6, " *    http://www.apache.org/licenses/LICENSE-2.0")
+    call append (7, " *")
+    call append (8, " * Unless required by applicable law or agreed to in writing, software")
+    call append (9, " * distributed under the License is distributed on an \"AS IS\" BASIS,")
+    call append (10, " * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.")
+    call append (11, " * See the License for the specific language governing permissions and")
+    call append (12, " * limitations under the License.")
+    call append (13, " */")
+endf
+map apl :call Apache()
 
 function AddTitle()
     call setline(1,"/**-------------------------------------------------------------------------")
