@@ -14,8 +14,8 @@ filetype plugin indent on
 " Syntax highlighting.
 syntax on
 " Setting colorscheme
-colorscheme desert
-color darkblue
+colorscheme koehler
+"color darkblue
 " Other settings.
 set autoindent
 set autoread
