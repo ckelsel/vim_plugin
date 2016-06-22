@@ -176,18 +176,18 @@ function AddCdemo()
     call append (6,"    return 0;")
     call append (7,"}")
 endf
-map cdemo :call AddCdemo()
+map cdm :call AddCdemo()
 
 function AddCxxdemo()
-    call setline(2,"#include <iostream>")
-    call append (2,"using namespace std;")
-    call append (3,"")
-    call append (4,"int main(int argc, char **argv)")
-    call append (5,"{")
-    call append (6,"    return 0;")
-    call append (7,"}")
+    call setline(1,"#include <iostream>")
+    call append (1,"using namespace std;")
+    call append (2,"")
+    call append (3,"int main(int argc, char **argv)")
+    call append (4,"{")
+    call append (5,"    return 0;")
+    call append (6,"}")
 endf
-map cxxdemo :call AddCxxdemo()
+map cxdm :call AddCxxdemo()
 
 function AddDebugNotice()
 endf
