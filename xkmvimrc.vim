@@ -28,7 +28,7 @@ set cinoptions=:0
 set cursorline
 set completeopt=longest,menuone
 set noexpandtab
-set fileencodings=cp936,utf-8,gb2312,gbk,gb18030
+set fileencodings=utf-8,cp936,gb2312,gbk,gb18030
 set fileformat=unix
 set foldenable
 set foldmethod=marker
