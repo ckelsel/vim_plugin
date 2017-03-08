@@ -153,6 +153,16 @@ function AddTitle()
 endf
 map title :call AddTitle()
 
+function AddVCN()
+    call setline(1, "\/\/")
+    call append( 1, "\/\/  " . expand("%"))
+    call append( 2, "\/\/")
+    call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
+    call append( 4, "\/\/  Copyright © 2017年 浙江云巢科技有限公司. All rights reserved.")
+    call append( 5, "\/\/")
+endf
+map vcn :call AddVCN()
+
 
 function AddTitlePrivate()
     call setline(1,"/**-------------------------------------------------------------------------")
