@@ -160,6 +160,7 @@ function AddVCN()
     call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
     call append( 4, "\/\/  Copyright © 2017年 浙江云巢科技有限公司. All rights reserved.")
     call append( 5, "\/\/")
+    call append( 6, "")
 endf
 map vcn :call AddVCN()
 
