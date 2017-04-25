@@ -120,7 +120,7 @@ endf
 map wp :call OS_WIN_POSIX()
 
 function Apache()
-    call setline(1,"/* Copyright 2016 kunming.xie")
+    call setline(1,"/* Copyright 2017 kunming.xie")
     call append (1, " *")
     call append (2, " * Licensed under the Apache License, Version 2.0 (the \"License\");")
     call append (3, " * you may not use this file except in compliance with the License.")
@@ -136,6 +136,24 @@ function Apache()
     call append (13, " */")
 endf
 map apl :call Apache()
+
+function ApacheOctave()
+    call setline(1,"%% Copyright 2017 kunming.xie")
+    call append (1, " %")
+    call append (2, " % Licensed under the Apache License, Version 2.0 (the \"License\");")
+    call append (3, " % you may not use this file except in compliance with the License.")
+    call append (4, " % You may obtain a copy of the License at")
+    call append (5, " %")
+    call append (6, " %    http://www.apache.org/licenses/LICENSE-2.0")
+    call append (7, " %")
+    call append (8, " % Unless required by applicable law or agreed to in writing, software")
+    call append (9, " % distributed under the License is distributed on an \"AS IS\" BASIS,")
+    call append (10, " % WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.")
+    call append (11, " % See the License for the specific language governing permissions and")
+    call append (12, " % limitations under the License.")
+    call append (13, "%%")
+endf
+map aplo :call ApacheOctave()
 
 function AddTitle()
     call setline(1,"/**-------------------------------------------------------------------------")
