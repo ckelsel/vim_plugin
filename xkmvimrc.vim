@@ -28,6 +28,7 @@ set cinoptions=:0
 set cursorline
 set completeopt=longest,menuone
 set noexpandtab
+set fileencoding=utf-8
 set fileencodings=utf-8,cp936,gb2312,gbk,gb18030
 set fileformat=unix
 set foldenable
@@ -176,7 +177,7 @@ function AddVCN()
     call append( 1, "\/\/  " . expand("%:t"))
     call append( 2, "\/\/")
     call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
-    call append( 4, "\/\/  Copyright Â© 2017å¹´ æµ™æ±Ÿäº‘å·¢ç§‘æŠ€æœ‰é™å…¬å¸. All rights reserved.")
+    call append( 4, "\/\/  Copyright (C) 2017Äê Õã½­ÔÆ³²¿Æ¼¼ÓĞÏŞ¹«Ë¾. All rights reserved.")
     call append( 5, "\/\/")
     call append( 6, "")
 endf
