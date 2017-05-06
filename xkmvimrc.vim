@@ -1,4 +1,4 @@
-" .vimrc - Vim configuration file.
+ï»¿" .vimrc - Vim configuration file.
 "
 " Copyright (c) 2010 Jeffy Du. All Rights Reserved.
 "
@@ -177,7 +177,7 @@ function AddVCN()
     call append( 1, "\/\/  " . expand("%:t"))
     call append( 2, "\/\/")
     call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
-    call append( 4, "\/\/  Copyright (C) 2017Äê Õã½­ÔÆ³²¿Æ¼¼ÓĞÏŞ¹«Ë¾. All rights reserved.")
+    call append( 4, "\/\/  Copyright (C) 2017 Zhe Jiang Cloud Nest Technology Co., Ltd. All rights reserved.")
     call append( 5, "\/\/")
     call append( 6, "")
 endf
@@ -327,16 +327,16 @@ set sw=4
 set expandtab
 
 
-" Æô¶¯×î´ó»¯
+" å¯åŠ¨æœ€å¤§åŒ–
 if has('win32')
-    "gvim, ¶ø²»ÊÇvim
+    "gvim, è€Œä¸æ˜¯vim
     au GUIEnter * simalt ~x
     set encoding=utf-8
     set fileencodings=utf-8,gbk,gb18030,gk2312
-    "½â¾ö²Ëµ¥ÂÒÂë
+    "è§£å†³èœå•ä¹±ç 
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
-    "½â¾öconsleÊä³öÂÒÂë
+    "è§£å†³consleè¾“å‡ºä¹±ç 
     language messages zh_CN.utf-8
 endif
 
