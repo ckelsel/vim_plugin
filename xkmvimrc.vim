@@ -327,5 +327,16 @@ set sw=4
 set expandtab
 
 
-set tags=~/tags
-autocmd GUIEnter * simalt ~x
+" 启动最大化
+if has('win32')
+    "gvim, 而不是vim
+    au GUIEnter * simalt ~x
+    set encoding=utf-8
+    set fileencodings=utf-8,gbk,gb18030,gk2312
+    "解决菜单乱码
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    "解决consle输出乱码
+    language messages zh_CN.utf-8
+endif
+
