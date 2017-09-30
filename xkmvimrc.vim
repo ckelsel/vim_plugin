@@ -322,8 +322,6 @@ nmap <C-P> :tabp<CR>
 nmap <F9> :cn<CR>
 nmap <F10> :cp<CR>
 nmap <Space> :
-set ts=4
-set sw=4
 set expandtab
 
 
