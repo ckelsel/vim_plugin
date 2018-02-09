@@ -23,6 +23,7 @@ set autowrite
 set background=dark
 set backspace=indent,eol,start
 set nobackup
+set noundofile
 set cindent
 set cinoptions=:0
 set cursorline
