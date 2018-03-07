@@ -173,6 +173,17 @@ function AddTitle()
 endf
 map title :call AddTitle()
 
+function AddAstute()
+    call setline(1, "\/\/")
+    call append( 1, "\/\/  " . expand("%:t"))
+    call append( 2, "\/\/")
+    call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
+    call append( 4, "\/\/  Copyright (C) 2018 Nanjing Astute Software Technology Co., Ltd. All rights reserved.")
+    call append( 5, "\/\/")
+    call append( 6, "")
+endf
+map hsr :call AddAstute()
+
 function AddVCN()
     call setline(1, "\/\/")
     call append( 1, "\/\/  " . expand("%:t"))
@@ -337,5 +348,7 @@ if has('win32')
     source $VIMRUNTIME/menu.vim
     "解决consle输出乱码
     language messages zh_CN.utf-8
+
+    colorscheme evening
 endif
 
