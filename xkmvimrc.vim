@@ -73,6 +73,15 @@ autocmd BufReadPost *
     \ exe "normal g'\"" |
     \ endif
 
+autocmd BufWritePre  *.{cpp,h,c,cc,hpp,cxx}  call StripTrailingWhite()
+
+function! StripTrailingWhite()
+    let l:winview = winsaveview()
+    silent! %s/\s\+$//
+    call winrestview(l:winview)
+endfunction
+
+
 " SHORTCUT SETTINGS: {{{1
 " Set mapleader
 let mapleader=","
