@@ -123,13 +123,6 @@ function GPLV2()
 endf
 map gpl :call GPLV2()
 
-function OS_WIN_POSIX()
-    call setline(line("."),"#if defined(OS_WIN)")
-    call setline(line(".")+1,"#elif defined(OS_POSIX)")
-    call setline(line(".")+2,"#endif")
-endf
-map wp :call OS_WIN_POSIX()
-
 function Apache()
     call setline(1,"/* Copyright 2017 kunming.xie")
     call append (1, " *")
