@@ -1,12 +1,4 @@
-﻿" .vimrc - Vim configuration file.
-"
-" Copyright (c) 2010 Jeffy Du. All Rights Reserved.
-"
-" Maintainer: Jeffy Du <jeffy.du@gmail.com>
-" Created: 2010-01-01
-" LastChange: 2010-04-22
-
-" GENERAL SETTINGS: {{{1
+﻿" GENERAL SETTINGS: {{{1
 " To use VIM settings, out of VI compatible mode.
 set nocompatible
 " Enable file type detection.
@@ -258,83 +250,25 @@ map gitlog :call AddGitLog()
 
 
 " PLUGIN SETTINGS: {{{1
-" taglist.vim
-let g:Tlist_Auto_Update=1
-let g:Tlist_Process_File_Always=1
-let g:Tlist_Exit_OnlyWindow=1
-let g:Tlist_Show_One_File=1
-let g:Tlist_WinWidth=25
-let g:Tlist_Enable_Fold_Column=0
-let g:Tlist_Auto_Highlight_Tag=1
-" NERDTree.vim
-let g:NERDTreeWinPos="right"
-let g:NERDTreeWinSize=25
-let g:NERDTreeShowLineNumbers=1
-let g:NERDTreeQuitOnOpen=1
-" cscope.vim
-if has("cscope")
-    set csto=1
-    set cst
-    set nocsverb
-    if filereadable("cscope.out")
-        cs add cscope.out
-    endif
-    set csverb
-endif
-" OmniCppComplete.vim
-let g:OmniCpp_DefaultNamespaces=["std"]
-let g:OmniCpp_MayCompleteScope=1
-let g:OmniCpp_SelectFirstItem=2
 " VimGDB.vim
 if has("gdb")
     set asm=0
     let g:vimgdb_debug_file=""
     run macros/gdb_mappings.vim
 endif
-" LookupFile setting
-let g:LookupFile_TagExpr='"./tags.filename"'
-let g:LookupFile_MinPatLength=2
-let g:LookupFile_PreserveLastPattern=0
-let g:LookupFile_PreservePatternHistory=1
-let g:LookupFile_AlwaysAcceptFirst=1
-let g:LookupFile_AllowNewFiles=0
+
 " Man.vim
 source $VIMRUNTIME/ftplugin/man.vim
-" snipMate
-let g:snips_author="Du Jianfeng"
-let g:snips_email="cmdxiaoha@163.com"
-let g:snips_copyright="SicMicro, Inc"
+
 " plugin shortcuts
 function! RunShell(Msg, Shell)
     echo a:Msg . '...'
     call system(a:Shell)
     echon 'done'
 endfunction
-nmap <F2> :TlistToggle<cr>
-nmap <F3> :NERDTreeToggle<cr>
-nmap <F4> :MRU<cr>
-nmap <F5> <Plug>LookupFile<cr>
-nmap <F6> :vimgrep /<C-R>=expand("<cword>")<cr>/ **/*.c **/*.h<cr><C-o>:cw<cr>
-"nmap <F9> :call RunShell("Generate tags", "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .")<cr>
-"nmap <F10> :call HLUDSync()<cr>
-nmap <F11> :call RunShell("Generate filename tags", "~/.vim/shell/genfiletags.sh")<cr>
-nmap <F12> :call RunShell("Generate cscope", "cscope -Rb")<cr>:cs add cscope.out<cr>
-nmap <leader>sa :cs add cscope.out<cr>
-nmap <leader>ss :cs find s <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>sg :cs find g <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>sc :cs find c <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>st :cs find t <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>se :cs find e <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>sf :cs find f <C-R>=expand("<cfile>")<cr><cr>
-nmap <leader>si :cs find i <C-R>=expand("<cfile>")<cr><cr>
-nmap <leader>sd :cs find d <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>zz <C-w>o
-nmap <leader>gs :GetScripts<cr>
 
 nmap <C-N> :tabnext<CR>
 nmap <C-P> :tabp<CR>
-nmap <F9> :cn<CR>
-nmap <F10> :cp<CR>
 nmap <Space> :
 set expandtab
 
@@ -354,3 +288,94 @@ if has('win32')
     colorscheme evening
 endif
 
+"
+" YouCompleteMe settings
+"
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_show_diagnostics_ui = 0
+set completeopt=menu,menuone
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings=1
+let g:ycm_key_invoke_completion = '<c-z>'
+let g:ycm_global_ycm_extra_conf = "C:\Users\v\vimfiles\.ycm_extra_conf.py"
+noremap <c-z> <NOP>
+
+let g:ycm_semantic_triggers =  {
+			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+			\ 'cs,lua,javascript': ['re!\w{2}'],
+			\ }
+
+let g:ycm_filetype_whitelist = {
+			\ "c":1,
+			\ "cpp":1,
+			\ "objc":1,
+			\ "sh":1,
+			\ "zsh":1,
+			\ "zimbu":1,
+			\ }
+
+
+
+"
+" gutentags settings
+"
+" gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+
+" 所生成的数据文件的名称
+let g:gutentags_ctags_tagfile = '.tags'
+
+" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+
+" 配置 ctags 的参数
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" 检测 ~/.cache/tags 不存在就新建
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
+
+"
+" asyncrun settings
+"
+" 自动打开 quickfix window ，高度为 6
+let g:asyncrun_open = 6
+
+" 任务结束时候响铃提醒
+let g:asyncrun_bell = 1
+
+" 设置 F10 打开/关闭 Quickfix 窗口
+nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+
+
+"
+" ale settings
+"
+" let g:ale_linters_explicit = 1
+" let g:ale_completion_delay = 500
+" let g:ale_echo_delay = 20
+" let g:ale_lint_delay = 500
+" let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+" let g:ale_lint_on_text_changed = 'normal'
+" let g:ale_lint_on_insert_leave = 1
+" let g:airline#extensions#ale#enabled = 1
+
+" let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+" let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+" let g:ale_c_cppcheck_options = ''
+" let g:ale_cpp_cppcheck_options = ''
+
+" let g:ale_sign_error = "\ue009\ue009"
+" hi! clear SpellBad
+" hi! clear SpellCap
+" hi! clear SpellRare
+" hi! SpellBad gui=undercurl guisp=red
+" hi! SpellCap gui=undercurl guisp=blue
+" hi! SpellRare gui=undercurl guisp=magenta
