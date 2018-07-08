@@ -58,14 +58,15 @@ set wrap
 
 " AUTO COMMANDS: {{{1
 " auto expand tab to blanks
-"autocmd FileType c,cpp set expandtab
+" autocmd FileType c,cpp set expandtab
 " Restore the last quit position when open file.
-autocmd BufReadPost *
-    \ if line("'\'") > 0 && line("'\"") <= line("$") |
-    \ exe "normal g'\"" |
-    \ endif
 
-autocmd BufWritePre  *.{cpp,h,c,cc,hpp,cxx}  call StripTrailingWhite()
+"autocmd BufReadPost *
+"    \ if line("'\'") > 0 && line("'\"") <= line("$") |
+"    \ exe "normal g'\"" |
+"    \ endif
+
+"autocmd BufWritePre  *.{cpp,h,c,cc,hpp,cxx}  call StripTrailingWhite()
 
 function! StripTrailingWhite()
     let l:winview = winsaveview()
