@@ -268,8 +268,8 @@ function! RunShell(Msg, Shell)
     echon 'done'
 endfunction
 
-nmap <C-N> :tabnext<CR>
-nmap <C-P> :tabp<CR>
+"nmap <C-N> :tabnext<CR>
+"nmap <C-P> :tabp<CR>
 nmap <Space> :
 set expandtab
 
@@ -384,3 +384,28 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 " hi! SpellBad gui=undercurl guisp=red
 " hi! SpellCap gui=undercurl guisp=blue
 " hi! SpellRare gui=undercurl guisp=magenta
+
+
+"
+" LeaderF
+"
+" CTRL+P 在当前项目搜索文件
+" CTRL+N 打开 MRU搜索，搜索最近打开的文件
+" ALT+P 打开搜索函数
+" ALT+N 打开 Buffer 搜索：
+let g:Lf_ShortcutF = '<c-p>'
+let g:Lf_ShortcutB = '<m-n>'
+noremap <c-n> :LeaderfMru<cr>
+noremap <m-p> :LeaderfFunction!<cr>
+noremap <m-n> :LeaderfBuffer<cr>
+noremap <m-m> :LeaderfTag<cr>
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
+
+let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_WindowHeight = 0.30
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
