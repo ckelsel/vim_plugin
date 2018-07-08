@@ -58,6 +58,15 @@ Plug 'vim-airline/vim-airline-themes'
 " Alternate Files quickly (.c --> .h etc)
 Plug 'vim-scripts/a.vim'
 
+" Directory viewer for Vim
+Plug 'justinmk/vim-dirvish'
+
+" unimpaired.vim: pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+
+" eunuch.vim: helpers for UNIX
+Plug 'tpope/vim-eunuch'
+
 " Initialize plugin system
 call plug#end()
 
