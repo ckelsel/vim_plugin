@@ -300,7 +300,11 @@ let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings=1
 let g:ycm_key_invoke_completion = '<c-z>'
-let g:ycm_global_ycm_extra_conf = "C:\Users\v\vimfiles\.ycm_extra_conf.py"
+if has('win32')
+    let g:ycm_global_ycm_extra_conf = "C:\Users\v\vimfiles\.ycm_extra_conf.py"
+else
+    let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
+endif
 noremap <c-z> <NOP>
 
 let g:ycm_semantic_triggers =  {
