@@ -51,6 +51,13 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " An asynchronous fuzzy finder which is used to quickly locate files, buffers, mrus, tags, etc. in large project.
 Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
 
+" lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Alternate Files quickly (.c --> .h etc)
+Plug 'vim-scripts/a.vim'
+
 " Initialize plugin system
 call plug#end()
 
