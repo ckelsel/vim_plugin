@@ -97,7 +97,7 @@ nmap <silent> <leader>cd :exe 'cd ' . OpenDir<cr>:pwd<cr>
 function GPLV2()
     call setline(1,"/**-------------------------------------------------------------------------")
     call append (2, " * ")
-    call append (3, " * Copyright (C) 2015 KunMing Xie <ckelsel@hotmail.com>")
+    call append (3, " * Copyright (C) 2018 KunMing Xie <kunming.xie@hotmail.com>")
     call append (4, " * ")
     call append (5, " * This program is free software; you can redistribute it and/or modify")
     call append (6, " * it under the terms of the GNU General Public License as published by")
@@ -117,7 +117,7 @@ endf
 map gpl :call GPLV2()
 
 function Apache()
-    call setline(1,"/* Copyright 2017 kunming.xie")
+    call setline(1,"/* Copyright 2018 kunming.xie")
     call append (1, " *")
     call append (2, " * Licensed under the Apache License, Version 2.0 (the \"License\");")
     call append (3, " * you may not use this file except in compliance with the License.")
@@ -135,7 +135,7 @@ endf
 map apl :call Apache()
 
 function ApacheOctave()
-    call setline(1,"%% Copyright 2017 kunming.xie")
+    call setline(1,"%% Copyright 2018 kunming.xie")
     call append (1, " %")
     call append (2, " % Licensed under the Apache License, Version 2.0 (the \"License\");")
     call append (3, " % you may not use this file except in compliance with the License.")
@@ -184,7 +184,7 @@ function AddVCN()
     call append( 1, "\/\/  " . expand("%:t"))
     call append( 2, "\/\/")
     call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
-    call append( 4, "\/\/  Copyright (C) 2017 Zhe Jiang Cloud Nest Technology Co., Ltd. All rights reserved.")
+    call append( 4, "\/\/  Copyright (C) 2018 Zhe Jiang Cloud Nest Technology Co., Ltd. All rights reserved.")
     call append( 5, "\/\/")
     call append( 6, "")
 endf
@@ -195,7 +195,7 @@ function AddTitlePrivate()
     call setline(1,"/**-------------------------------------------------------------------------")
     call append (1," * @file " . expand("%:t"))
     call append (2," *" )
-    call append (3," * @author ckelsel@hotmail.com" )
+    call append (3," * @author kunming.xie@hotmail.com" )
     call append (4," *" )
     call append (5," * @date " . strftime("%Y-%m-%d"))
     call append (6," *" )
@@ -243,7 +243,7 @@ endf
 map svnlog :call AddSvnLog()
 
 function AddGitLog()
-    call setline(1,"Author: ckelsel")
+    call setline(1,"Author: kunming.xie")
     call append (1,"Description: ")
     call append (2,"1. ")
 endf
@@ -299,11 +299,12 @@ let g:ycm_server_log_level = 'info'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings=1
-let g:ycm_key_invoke_completion = '<c-z>'
+"let g:ycm_key_invoke_completion = '<c-z>'
 if has('win32')
     let g:ycm_global_ycm_extra_conf = "C:\Users\v\vimfiles\.ycm_extra_conf.py"
 else
-    let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
+    let g:ycm_global_ycm_extra_conf = 0
+    "~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
 endif
 noremap <c-z> <NOP>
 
@@ -332,8 +333,8 @@ let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
 
-" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-let s:vim_tags = expand('~/.cache/tags')
+" 将自动生成的 tags 文件全部放入 ~/.vim/cache/tags 目录中，避免污染工程目录
+let s:vim_tags = expand('~/.vim/cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 
 " 配置 ctags 的参数
@@ -341,7 +342,7 @@ let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
-" 检测 ~/.cache/tags 不存在就新建
+" 检测 ~/.vim/cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
