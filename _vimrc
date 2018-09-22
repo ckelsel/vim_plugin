@@ -1,21 +1,3 @@
-" fix runtime error r6034
-python << EOF
-import os, re
-path = os.environ['PATH'].split(';')
-
-def is_problem(folder):
-    try:
-        for item in os.listdir(folder):
-            if re.match(r'msvcr\d\d\.dll', item):
-                return True
-    except:
-        pass
-    return False
-
-path = [folder for folder in path if not is_problem(folder)]
-os.environ['PATH'] = ';'.join(path)
-EOF
-
 set encoding=utf-8
 
 " Specify a directory for plugins
