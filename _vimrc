@@ -30,7 +30,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'https://github.com/ckelsel/vim_plugin.git'
 
 " A code-completion engine for Vim http://valloric.github.io/YouCompleteMe/
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window
 Plug 'skywind3000/asyncrun.vim'
@@ -39,11 +39,11 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'w0rp/ale'
 
 " Displays function signatures from completions in the command line.
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/echodoc.vim'
 
 " Signify (or just Sy) uses the sign column to indicate added,
 " modified and removed lines in a file that is managed by a version control system (VCS).
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 
 " Additional Vim syntax highlighting for C++ (including C++11/14)
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -59,15 +59,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/a.vim'
 
 " Directory viewer for Vim
-Plug 'justinmk/vim-dirvish'
+" Plug 'justinmk/vim-dirvish'
 
 " unimpaired.vim: pairs of handy bracket mappings
-Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-unimpaired'
 
 " eunuch.vim: helpers for UNIX
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 
 " Initialize plugin system
 call plug#end()
 
-source $VIMRUNTIME/mswin.vim
+" source $VIMRUNTIME/mswin.vim
