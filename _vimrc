@@ -1,3 +1,4 @@
+
 set encoding=utf-8
 
 " Specify a directory for plugins
@@ -29,6 +30,9 @@ Plug 'w0rp/ale'
 
 " Additional Vim syntax highlighting for C++ (including C++11/14)
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Asynchronously fly grep in vim
+Plug 'wsdjeg/FlyGrep.vim'
 
 " An asynchronous fuzzy finder which is used to quickly locate files, buffers, mrus, tags, etc. in large project.
 Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
