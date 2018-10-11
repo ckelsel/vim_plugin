@@ -14,3 +14,5 @@ $uri = 'https://nchc.dl.sourceforge.net/project/ctags/ctags/5.8/ctags58.zip'
     "~\vimfiles\ctags.zip"
   )
 )
+
+Copy-Item .\_vimrc -Destination ~\_vimrc
