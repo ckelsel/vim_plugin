@@ -306,7 +306,7 @@ else
     let g:ycm_global_ycm_extra_conf = 0
     "~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
 endif
-noremap <c-z> <NOP>
+"noremap <c-z> <NOP>
 
 let g:ycm_semantic_triggers =  {
 			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
