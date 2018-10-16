@@ -1,4 +1,3 @@
-
 set encoding=utf-8
 
 " Specify a directory for plugins
@@ -18,7 +17,10 @@ Plug 'https://github.com/ckelsel/vim_plugin.git'
 " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window
 Plug 'skywind3000/asyncrun.vim'
 
-" ALE (Asynchronous Lint Engine) 
+" Better whitespace highlighting for Vim
+Plug 'ntpeters/vim-better-whitespace'
+
+" ALE (Asynchronous Lint Engine)
 Plug 'w0rp/ale'
 
 " Displays function signatures from completions in the command line.
