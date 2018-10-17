@@ -20,6 +20,9 @@ Plug 'skywind3000/asyncrun.vim'
 " Better whitespace highlighting for Vim
 Plug 'ntpeters/vim-better-whitespace'
 
+" A vim plugin to display the indention levels with thin vertical lines
+Plug 'Yggdroot/indentLine'
+
 " ALE (Asynchronous Lint Engine)
 Plug 'w0rp/ale'
 
