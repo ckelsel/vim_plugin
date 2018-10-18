@@ -55,6 +55,7 @@ set wildignore=*.bak,*.o,*.e,*~
 set wildmenu
 set wildmode=list:longest,full
 set wrap
+set splitbelow
 
 " AUTO COMMANDS: {{{1
 " auto expand tab to blanks
