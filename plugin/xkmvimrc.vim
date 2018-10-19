@@ -135,40 +135,6 @@ function Apache()
 endf
 map apl :call Apache()
 
-function ApacheOctave()
-    call setline(1,"%% Copyright 2018 kunming.xie")
-    call append (1, " %")
-    call append (2, " % Licensed under the Apache License, Version 2.0 (the \"License\");")
-    call append (3, " % you may not use this file except in compliance with the License.")
-    call append (4, " % You may obtain a copy of the License at")
-    call append (5, " %")
-    call append (6, " %    http://www.apache.org/licenses/LICENSE-2.0")
-    call append (7, " %")
-    call append (8, " % Unless required by applicable law or agreed to in writing, software")
-    call append (9, " % distributed under the License is distributed on an \"AS IS\" BASIS,")
-    call append (10, " % WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.")
-    call append (11, " % See the License for the specific language governing permissions and")
-    call append (12, " % limitations under the License.")
-    call append (13, "%%")
-endf
-map aplo :call ApacheOctave()
-
-function AddTitle()
-    call setline(1,"/**-------------------------------------------------------------------------")
-    call append (1," * @file " . expand("%:t"))
-    call append (2," *" )
-    call append (3," * @author xiekm@yunchao.com" )
-    call append (4," *" )
-    call append (5," * @date " . strftime("%Y-%m-%d"))
-    call append (6," *" )
-    call append (7," * @brief " )
-    call append (8," *" )
-    call append (9," * @version " )
-    call append (10," *" )
-    call append (11," *------------------------------------------------------------------------*/")
-endf
-map title :call AddTitle()
-
 function AddAstute()
     call setline(1, "\/\/")
     call append( 1, "\/\/  " . expand("%:t"))
@@ -179,18 +145,6 @@ function AddAstute()
     call append( 6, "")
 endf
 map hsr :call AddAstute()
-
-function AddVCN()
-    call setline(1, "\/\/")
-    call append( 1, "\/\/  " . expand("%:t"))
-    call append( 2, "\/\/")
-    call append( 3, "\/\/  Created by XieKunming on " . strftime("%Y/%m/%d"))
-    call append( 4, "\/\/  Copyright (C) 2018 Zhe Jiang Cloud Nest Technology Co., Ltd. All rights reserved.")
-    call append( 5, "\/\/")
-    call append( 6, "")
-endf
-map vcn :call AddVCN()
-
 
 function AddTitlePrivate()
     call setline(1,"/**-------------------------------------------------------------------------")
@@ -207,8 +161,6 @@ function AddTitlePrivate()
     call append (11," *------------------------------------------------------------------------*/")
 endf
 map mytitle :call AddTitlePrivate()
-
-
 
 function AddCdemo()
     call setline(1,"#include <stdio.h>")
@@ -233,23 +185,11 @@ function AddCxxdemo()
 endf
 map cxdm :call AddCxxdemo()
 
-function AddDebugNotice()
+function AddPlantUML()
+    call setline(1,"@startuml")
+    call append (1,"@enduml")
 endf
-
-function AddSvnLog()
-    call setline(1,"Author: xiekunming")
-    call append (1,"Description: ")
-    call append (2,"1. ")
-endf
-map svnlog :call AddSvnLog()
-
-function AddGitLog()
-    call setline(1,"Author: kunming.xie")
-    call append (1,"Description: ")
-    call append (2,"1. ")
-endf
-map gitlog :call AddGitLog()
-
+map uml :call AddPlantUML()
 
 " PLUGIN SETTINGS: {{{1
 " VimGDB.vim
