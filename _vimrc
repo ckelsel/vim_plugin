@@ -5,6 +5,15 @@ set encoding=utf-8
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+" Vim plugin for intensely orgasmic commenting
+Plug 'scrooloose/nerdcommenter'
+
+" Inline previews for Plantuml sequence diagrams. OMG!
+Plug 'scrooloose/vim-slumlord'
+
+" vim syntax file for plantuml
+Plug 'aklt/plantuml-syntax'
+
 " A Vim plugin that manages your tag files
 Plug 'ludovicchabant/vim-gutentags'
 
