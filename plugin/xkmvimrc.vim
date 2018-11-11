@@ -77,8 +77,6 @@ endfunction
 
 
 " SHORTCUT SETTINGS: {{{1
-" Set mapleader
-let mapleader=","
 " Space to command mode.
 nnoremap <space> :
 vnoremap <space> :
